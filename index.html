@@ -28,8 +28,8 @@ body {
 //import liquidFillGauge from "./liquidFillGauge.js";
 import liquidFillGauge from "https://code4fukui.github.io/liquidFillGauge/liquidFillGauge.js";
 
-
 const gauge1 = liquidFillGauge.load("fillgauge1", 55);
+
 const config1 = liquidFillGauge.default();
 config1.circleColor = "#FF7777";
 config1.textColor = "#FF4444";
@@ -38,8 +38,8 @@ config1.waveColor = "#FFDDDD";
 config1.circleThickness = 0.2;
 config1.textVertPosition = 0.2;
 config1.waveAnimateTime = .1;
-
 const gauge2 = liquidFillGauge.load("fillgauge2", 28, config1);
+
 const config2 = liquidFillGauge.default();
 config2.circleColor = "#D4AB6A";
 config2.textColor = "#553300";
@@ -52,6 +52,7 @@ config2.waveAnimateTime = 2000;
 config2.waveHeight = 0.3;
 config2.waveCount = 1;
 const gauge3 = liquidFillGauge.load("fillgauge3", 60.1, config2);
+
 const config3 = liquidFillGauge.default();
 config3.textVertPosition = 0.8;
 config3.waveAnimateTime = 5000;
@@ -61,6 +62,7 @@ config3.waveOffset = 0.25;
 config3.valueCountUp = false;
 config3.displayPercent = false;
 const gauge4 = liquidFillGauge.load("fillgauge4", 50, config3);
+
 const config4 = liquidFillGauge.default();
 config4.circleThickness = 0.15;
 config4.circleColor = "#808015";
@@ -77,6 +79,7 @@ config4.waveOffset = 0.25;
 config4.textSize = 0.75;
 config4.waveCount = 3;
 const gauge5 = liquidFillGauge.load("fillgauge5", 60.44, config4);
+
 const config5 = liquidFillGauge.default();
 config5.circleThickness = 0.4;
 config5.circleColor = "#6DA398";
@@ -95,7 +98,6 @@ config5.maxValue = 150
 config5.displayPercent = false;
 const gauge6 = liquidFillGauge.load("fillgauge6", 120, config5);
 
-
 const newValue = () => {
     if (Math.random() > .5) {
         return Math.round(Math.random() * 100);
@@ -109,36 +111,3 @@ document.body.querySelectorAll("svg").forEach((e, i) => e.onclick = () => gauge[
 </script>
 </body>
 </html>
-
-<!--
-
-<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="https://fukuno.jig.jp/app/waterlevelmeter/lib/liquidFillGauge.js"></script>
-<body>
-  <svg id="gauge" width="50vw" height="50vw"></svg>
-  <script type="module">
-onload = async () => {
-const url = "https://fukui-api.ideabox.cloud/v1/statistics";
-const data = await (await fetch(url)).json();
-console.log(data);
-
-const conf = liquidFillGauge.default()
-conf.circleColor = '#F7C22D'
-conf.textColor = '#F7C22D'
-conf.waveTextColor = '#FFE9B3'
-conf.waveColor = '#F7C22D'
-conf.displayPercent = true
-conf.maxValue = 100
-conf.waveCount = 2
-conf.circleThickness = 0.1
-conf.waveAnimateTime = 2400
-
-liquidFillGauge.load('gauge', 50, conf)
-
-}
-</script>
-</body>
-</html>
-
--->
