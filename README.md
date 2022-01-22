@@ -13,8 +13,7 @@ html
 ```
 javascript
 ```javascript
-import liquidFillGauge from 'YOUR/PATH/liquidFillGauge'
-import * as d3 from 'd3'
+import liquidFillGauge from "https://code4fukui.github.io/liquidFillGauge/liquidFillGauge.js";
 
 var conf = liquidFillGauge.default()
 conf.circleColor = '#F7C22D'
@@ -27,5 +26,5 @@ conf.waveCount = 2
 conf.circleThickness = 0.1
 conf.waveAnimateTime = 2400
 
-liquidFillGauge.load(d3, 'my-chart', 50, conf)
+liquidFillGauge.load("my-chart", 50, conf)
 ```
