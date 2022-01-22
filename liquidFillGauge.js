@@ -7,6 +7,8 @@
  *
  * Liquid Fill Gauge v1.2
  */
+import * as d3 from "https://cdn.skypack.dev/d3@7";
+
 function liquidFillGaugeDefaultSettings () {
   return {
     minValue: 0, // The gauge minimum value.
@@ -32,7 +34,7 @@ function liquidFillGaugeDefaultSettings () {
   }
 }
 
-function loadLiquidFillGauge (d3, elementId, value, config) {
+function loadLiquidFillGauge (elementId, value, config) {
   if (config == null) {
     config = liquidFillGaugeDefaultSettings()
   }
@@ -242,7 +244,7 @@ function loadLiquidFillGauge (d3, elementId, value, config) {
       var waveScaleY = d3.scaleLinear().range([0, waveHeight]).domain([0, 1])
       var newClipArea
       if (config.waveHeightScaling) {
-        newClipArea = d3.svg.area()
+        newClipArea = d3.area()
           .x(function (d) { return waveScaleX(d.x) })
           .y0(function (d) { return waveScaleY(Math.sin(Math.PI * 2 * config.waveOffset * -1 + Math.PI * 2 * (1 - config.waveCount) + d.y * 2 * Math.PI)) })
           .y1(function (d) { return (fillCircleRadius * 2 + waveHeight) })
